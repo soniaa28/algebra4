@@ -154,6 +154,29 @@ namespace WinFormsApp4
                         max = Math.Abs(data[i, j]);
             return max;
         }
-
+        public Matrix ToAdjacencyMatrix()
+        {
+            Matrix adjacencyMatrix = new Matrix(Rows, Cols);
+            for (int i = 0; i < Rows; i++)
+            {
+                for (int j = 0; j < Cols; j++)
+                {
+                    adjacencyMatrix[i, j] = data[i, j] != 0 ? 1 : 0;
+                }
+            }
+            return adjacencyMatrix;
+        }
+        public int[,] ToIntArray()
+        {
+            int[,] intArray = new int[Rows, Cols];
+            for (int i = 0; i < Rows; i++)
+            {
+                for (int j = 0; j < Cols; j++)
+                {
+                    intArray[i, j] = (int)data[i, j];
+                }
+            }
+            return intArray;
+        }
     }
 }

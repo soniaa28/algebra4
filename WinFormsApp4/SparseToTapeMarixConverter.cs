@@ -95,7 +95,7 @@ namespace WinFormsApp4
 
         public int Gibbs()
         {
-            CalcDiametr();
+            
             List<LevelsTable> tables = new();
             LevelsTable table = BuildLevels(GetIndexFirstVertexWithMinPower());
             do

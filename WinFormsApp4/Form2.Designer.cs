@@ -48,7 +48,7 @@
             // button1
             // 
             button1.FlatStyle = FlatStyle.Flat;
-            button1.Location = new Point(313, 53);
+            button1.Location = new Point(299, 53);
             button1.Name = "button1";
             button1.Size = new Size(113, 23);
             button1.TabIndex = 0;
@@ -58,9 +58,10 @@
             // 
             // resultText
             // 
-            resultText.Location = new Point(448, 53);
+            resultText.Location = new Point(448, 12);
+            resultText.Multiline = true;
             resultText.Name = "resultText";
-            resultText.Size = new Size(383, 23);
+            resultText.Size = new Size(383, 208);
             resultText.TabIndex = 1;
             // 
             // txtMatrix
@@ -103,7 +104,7 @@
             // button3
             // 
             button3.FlatStyle = FlatStyle.Flat;
-            button3.Location = new Point(313, 108);
+            button3.Location = new Point(299, 238);
             button3.Name = "button3";
             button3.Size = new Size(113, 23);
             button3.TabIndex = 6;
@@ -113,7 +114,7 @@
             // 
             // resultText2
             // 
-            resultText2.Location = new Point(448, 108);
+            resultText2.Location = new Point(448, 238);
             resultText2.Name = "resultText2";
             resultText2.Size = new Size(383, 23);
             resultText2.TabIndex = 7;
@@ -121,7 +122,7 @@
             // button4
             // 
             button4.FlatStyle = FlatStyle.Flat;
-            button4.Location = new Point(313, 160);
+            button4.Location = new Point(299, 267);
             button4.Name = "button4";
             button4.Size = new Size(113, 23);
             button4.TabIndex = 8;
@@ -131,7 +132,7 @@
             // 
             // result3
             // 
-            result3.Location = new Point(448, 161);
+            result3.Location = new Point(448, 267);
             result3.Name = "result3";
             result3.Size = new Size(383, 23);
             result3.TabIndex = 9;
@@ -139,7 +140,7 @@
             // button5
             // 
             button5.FlatStyle = FlatStyle.Flat;
-            button5.Location = new Point(290, 213);
+            button5.Location = new Point(288, 304);
             button5.Name = "button5";
             button5.Size = new Size(154, 23);
             button5.TabIndex = 10;
@@ -149,7 +150,7 @@
             // 
             // result4
             // 
-            result4.Location = new Point(448, 214);
+            result4.Location = new Point(448, 304);
             result4.Multiline = true;
             result4.Name = "result4";
             result4.Size = new Size(426, 212);

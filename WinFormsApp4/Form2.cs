@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,17 +20,34 @@ namespace WinFormsApp4
 
         }
 
+       
+
         private void button1_Click(object sender, EventArgs e)
         {
             Matrix A = ParseMatrix(txtMatrix.Text);
+            var adj = A.ToAdjacencyMatrix();
+            var tograph = adj.ToIntArray();
+            Graph graph = new Graph(tograph);
+
             converter = new SparseToTapeMatrixConverter(A);
             int startV = int.Parse(start.Text);
             int endV = int.Parse(end.Text);
-            var result = converter.DijkstraAlgorithm(startV, endV);
-            if (result.distanceExists)
-                resultText.Text = $"Shortest distance from {startV} to {endV} is {result.distance}.";
-            else
-                resultText.Text = "No path found.";
+            List<List<int>> allPaths = graph.FindAllPaths(startV , endV );
+            StringBuilder resultText = new StringBuilder($"All paths from {startV} to {endV}:\n");
+
+            foreach (var path in allPaths)
+            {
+                resultText.AppendLine(string.Join(" -> ", path));
+            }
+
+            var shortestPath = allPaths.OrderBy(path => path.Count).FirstOrDefault();
+            if (shortestPath != null)
+            {
+                resultText.AppendLine($"\nShortest path from {startV} to {endV}: {string.Join(" -> ", shortestPath)}");
+            }
+
+            this.resultText.Text = resultText.ToString();
+
         }
         private void btnCalcDiameter_Click(object sender, EventArgs e)
         {
